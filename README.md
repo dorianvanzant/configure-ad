@@ -28,7 +28,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <h2>Deployment and Configuration Steps</h2>
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/Ogg5SYE.png)" height="80%" width="80%" alt="Azure Photo Collage"/>
 </p>
 <p>
 Create two Virtual Machines, one using Windows Server 2022, "DC-1," which will serve as the Domain Controller and the other using Windows 10, "Client-1," which will serve as a Client on the network. Ensure they are both on the same Virtual Network. Change DC-1 NIC's Private IP address to Static, as it will be used later as a DNS Server for Client-1. Using Remote Desktop, login to DC-1 and enable ICMPv4 on the local windows Firewall. Login to Client-1 and ping DC-1's private IP address.   
@@ -36,7 +36,7 @@ Create two Virtual Machines, one using Windows Server 2022, "DC-1," which will s
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/tkB4kJO.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 Install Active Directory on DC-1. Promote as a Domain Controller. Setup a new forest. Restart and login. In ADUC, create Organizational Units for Employees and Admins. Create a new employee and add them to the "Domain Admins" Security Group. Logout and log back in as the new employee. They'll be used as the new Admin. Create another employee, and leave them in the Domain User Security Group.
