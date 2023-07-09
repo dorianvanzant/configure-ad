@@ -28,7 +28,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <h2>Deployment and Configuration Steps</h2>
 
 <p>
-<img src="https://i.imgur.com/Ogg5SYE.png)" height="80%" width="80%" alt="Azure Photo Collage"/>
+<img src="https://i.imgur.com/Ogg5SYE.png)" height="100%" width="100%" alt="Azure Photo Collage of Steps"/>
 </p>
 <p>
 Create two Virtual Machines, one using Windows Server 2022, "DC-1," which will serve as the Domain Controller and the other using Windows 10, "Client-1," which will serve as a Client on the network. Ensure they are both on the same Virtual Network. Change DC-1 NIC's Private IP address to Static, as it will be used later as a DNS Server for Client-1. Using Remote Desktop, login to DC-1 and enable ICMPv4 on the local windows Firewall. Login to Client-1 and ping DC-1's private IP address.   
@@ -36,7 +36,7 @@ Create two Virtual Machines, one using Windows Server 2022, "DC-1," which will s
 <br />
 
 <p>
-<img src="https://i.imgur.com/tkB4kJO.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/tkB4kJO.png" height="100%" width="100%" alt="Active Directory Photo Collage of Steps"/>
 </p>
 <p>
 Install Active Directory on DC-1. Promote as a Domain Controller. Setup a new forest. Restart and login. In ADUC, create Organizational Units for Employees and Admins. Create a new employee and add them to the "Domain Admins" Security Group. Logout and log back in as the new employee. They'll be used as the new Admin. Create another employee, and leave them in the Domain User Security Group.
@@ -44,7 +44,7 @@ Install Active Directory on DC-1. Promote as a Domain Controller. Setup a new fo
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/lsaanWy.png" height="100%" width="100%" alt="Active Directory Photo Collage of Steps"/>
 </p>
 <p>
 From the Azure Portal, set Client-1's DNS settings to the Domain Controller's Private IP Address. Restart Client-1. Login as the original local admin and join it to the Domain. Restart Client-1. Client-1 should now show up in ADUC inside the "Computers" Container. Login to Client-1 as the Admin. System Properties --> Remote Desktop. Allow the Domain Users Security Group to access the client via Remote Desktop. You can now log into Client-1 as a normal, non-administrative user. This can be done to multiple computers at once using Group Policy. Attempt to login to Client-1 as the regular employee you created earlier.
